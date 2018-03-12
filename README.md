@@ -32,6 +32,9 @@ you have an API key for pubproxy or gimmeproxy, you can put it in your
 configuration file.
 
 ``` pycon
+>>> from cabret import proxy
+>>> proxy.get_https_proxy()
+Proxy(ip='191.251.165.63', port=8080, country='BR', anonymity='elite proxy', https=True)
 >>> from cabret import web
 >>> web.urlopen('https://ifconfig.co/ip', use_proxy=True)
 '2a03:4000:21:435::dead:beef\n'
