@@ -16,3 +16,9 @@ email
 
 -   handle reserved address for mailsac
 -   support for mailinator and yopmail (with selenium)
+
+scrapers
+========
+
+-   add parallel downloader
+-   add reddit scraper

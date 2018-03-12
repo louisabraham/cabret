@@ -12,7 +12,9 @@ Web scraping
 Just a basic wrapper around
 [requests](http://docs.python-requests.org/en/master/) with a default
 user-agent and that supports auto-discovered proxies. Can return raw
-html, BeautifulSoup or json.
+html,
+[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+or json.
 
 ``` pycon
 >>> from cabret import web
