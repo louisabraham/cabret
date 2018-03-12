@@ -1,7 +1,9 @@
-[cabret](http://ffden-2.phys.uaf.edu/webproj/212_spring_2015/Katrina_Howe/Howe_Katrina/Pictures%20for%20Web%20Proj/Hugo1.JPG)
-=============================================================================================================================
+cabret
+======
 
 Various utilities for making bots.
+
+![cabret](http://ffden-2.phys.uaf.edu/webproj/212_spring_2015/Katrina_Howe/Howe_Katrina/Pictures%20for%20Web%20Proj/Hugo1.JPG)
 
 Web scraping
 ------------
