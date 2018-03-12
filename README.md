@@ -9,8 +9,10 @@ title="The automaton from the book The Invention of Hugo Cabret" width="20%"/>
 Web scraping
 ------------
 
-Just a base wrapper around requests with a default user-agent and that
-supports proxies. Can return raw html, BeautifulSoup or json.
+Just a basic wrapper around
+[requests](http://docs.python-requests.org/en/master/) with a default
+user-agent and that supports auto-discovered proxies. Can return raw
+html, BeautifulSoup or json.
 
 ``` pycon
 >>> from cabret import web
@@ -40,8 +42,8 @@ Proxy(ip='191.251.165.63', port=8080, country='BR', anonymity='elite proxy', htt
 '2a03:4000:21:435::dead:beef\n'
 ```
 
-By default, https://free-proxy-list.net/ is used. You can change that
-with `config.ini`.
+By default, https://free-proxy-list.net/ is used. You can change that in
+`config.ini`.
 
 Get validation emails
 ---------------------
@@ -60,7 +62,7 @@ EmailAddress(address@mailsac.com)
 ```
 
 Mailsac is really great, you should get a premium account to support
-them!
+them (although you can do almost everything for free)!
 
 You can put your API key in `config.ini`.
 
