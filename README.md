@@ -4,7 +4,7 @@ cabret
 Various utilities for making bots.
 
 <img src="http://ffden-2.phys.uaf.edu/webproj/212_spring_2015/Katrina_Howe/Howe_Katrina/Pictures%20for%20Web%20Proj/Hugo1.JPG"
-alt="cabret" width="20%"/>
+title="The automaton from the book The Invention of Hugo Cabret" width="20%"/>
 
 Web scraping
 ------------
