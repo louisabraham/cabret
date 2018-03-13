@@ -79,9 +79,19 @@ Scrape some websites
 >>> posts = next(reddit.gen_posts('https://www.reddit.com/r/copypasta'))
 >>> len(posts) # posts on the first page
 26
->>> posts[0]
+>>> post = posts[0]
+>>> post
 Post(title='Today r/copypasta is joining Operation: #OneMoreVote to save net neutrality', domain='self.copypasta', url='https://www.reddit.com/r/copypasta/comments/80pfhp/today_rcopypasta_is_joining_operation_onemorevote/', comments='https://www.reddit.com/r/copypasta/comments/80pfhp/today_rcopypasta_is_joining_operation_onemorevote/', author='SMUT_ADDICT', subreddit='copypasta')
->>> reddit.get_post_text(posts[0])
+>>> from pprint import pprint
+>>> pprint(dict(post._asdict())) # it is just a namedtuple
+{'author': 'SMUT_ADDICT',
+ 'comments': 'https://www.reddit.com/r/copypasta/comments/80pfhp/today_rcopypasta_is_joining_operation_onemorevote/',
+ 'domain': 'self.copypasta',
+ 'subreddit': 'copypasta',
+ 'title': 'Today r/copypasta is joining Operation: #OneMoreVote to save net '
+          'neutrality',
+ 'url': 'https://www.reddit.com/r/copypasta/comments/80pfhp/today_rcopypasta_is_joining_operation_onemorevote/'}
+>>> reddit.get_post_text(post)
 'This past December, the FCC voted to kill net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content. If this happens, subreddits like this one might not exist.\nWe can still block the repeal using the Congressional Review Act (CRA), and we’re just one vote away from winning in the Senate and taking the fight to the House. That’s why today we’re joining Operation: #OneMoreVote, an Internet-wide day of action.\nThis affects every redditor as well as every Internet user, and we only have a 60 legislative days left to stop it. Please, take a moment of your time to join the protest by contacting your lawmakers.\n'
 ```
 
