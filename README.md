@@ -68,6 +68,28 @@ them (although you can do almost everything for free)!
 
 You can put your API key in `config.ini`.
 
+Scrape some websites
+--------------------
+
+### Reddit
+
+``` pycon
+>>> from cabret import web
+>>> from cabret.scrapers import reddit
+>>> posts, nexturl = reddit.get_posts_from_soup(web.get_soup('https://www.reddit.com/r/copypasta/'))
+>>> soup = web.get_soup('https://www.reddit.com/r/copypasta/')
+>>> posts, nexturl = reddit.get_posts_from_soup(soup)
+>>> reddit.get_post_text(posts[0])
+'This past December, the FCC voted to kill net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content. If this happens, subreddits like this one might not exist.\nWe can still block the repeal using the Congressional Review Act (CRA), and we’re just one vote away from winning in the Senate and taking the fight to the House. That’s why today we’re joining Operation: #OneMoreVote, an Internet-wide day of action.\nThis affects every redditor as well as every Internet user, and we only have a 60 legislative days left to stop it. Please, take a moment of your time to join the protest by contacting your lawmakers.\n'
+```
+
+The module is also a commandline utility. To scrape the text from the
+posts of the 3 first pages of /r/copypasta/ with parallel downloading:
+
+``` bash
+python3 -im cabret.scrapers.reddit 3 /r/copypasta/
+```
+
 Configuration
 -------------
 

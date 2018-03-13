@@ -25,3 +25,4 @@ def get_soup(url, params=None, use_proxy=None):
     return BeautifulSoup(urlopen(url, params=params,
                                  use_proxy=proxy.get_proxy_for_url(use_proxy, url)),
                          'lxml')
+
