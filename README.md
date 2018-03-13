@@ -87,7 +87,7 @@ The module is also a commandline utility. To scrape the text from the
 posts of the 3 first pages of /r/copypasta/ with parallel downloading:
 
 ``` bash
-python3 -im cabret.scrapers.reddit 3 /r/copypasta/
+python3 -m cabret.scrapers.reddit 3 /r/copypasta/
 ```
 
 Configuration
