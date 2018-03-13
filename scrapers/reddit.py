@@ -47,7 +47,7 @@ def get_posts_from_soup(soup):
     return ans, nexturl
 
 
-def gen_posts(url, nb_pages=None, use_tqdm=True):
+def gen_posts(url, nb_pages=None, use_tqdm=False):
     for _ in tqdm(nb_pages, cond=use_tqdm):
         posts, url = get_posts_from_soup(web.get_soup(url))
         yield posts
@@ -69,7 +69,7 @@ def get_post_text(url):
     assert ans.endswith('\n')
     return ans
 
-def gen_text(url, nb_pages=None, use_tqdm=True,
+def gen_text(url, nb_pages=None, use_tqdm=False,
              batch=25, post_filter=bool, text_filter=bool):
     for posts in gen_posts(url, nb_pages, use_tqdm=use_tqdm):
         urls = [p.url for p in filter(post_filter, posts)]
@@ -87,6 +87,6 @@ if is_main:
 
     nb_pages = int(sys.argv[1])
     url = get_reddit_url(sys.argv[2]) if len(sys.argv) > 2 else 'https://www.reddit.com/'
-    for t in gen_text(url, nb_pages,
+    for t in gen_text(url, nb_pages, use_tqdm=True,
                       text_filter=ASCII_filter):
         print(t)
